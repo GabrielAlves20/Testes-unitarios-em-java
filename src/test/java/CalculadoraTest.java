@@ -1,11 +1,20 @@
 import org.example.Calculadora;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CalculadoraTest {
+    private Calculadora calculadora;
+
+    @BeforeEach
+    public void setUp(){
+        calculadora = new Calculadora();
+        System.out.println("Antes de cada teste");
+    }
+
+
     @Test
     public void deveSomarDoisValores(){
-        Calculadora calculadora = new Calculadora();
         double a = 10;
         double b = 20;
         double resultado = calculadora.somar(a, b);
@@ -14,7 +23,6 @@ public class CalculadoraTest {
     }
     @Test
     public void deveMultiplicarDoisValores(){
-        Calculadora calculadora = new Calculadora();
         double a = 10;
         double b = 20;
         double resultado = calculadora.multiplicar(a, b);
@@ -23,7 +31,6 @@ public class CalculadoraTest {
     }
     @Test
     public void deveDividirDoisValores(){
-        Calculadora calculadora = new Calculadora();
         double a = 10;
         double b = 20;
         double resultado = calculadora.dividir(a, b);
@@ -32,7 +39,6 @@ public class CalculadoraTest {
     }
     @Test
     public void deveSubtrairDoisValores(){
-        Calculadora calculadora = new Calculadora();
         double a = 10;
         double b = 20;
         double resultado = calculadora.subtrair(a, b);
